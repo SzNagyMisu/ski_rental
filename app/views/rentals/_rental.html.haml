@@ -1,0 +1,7 @@
+%tr
+  %td= rental.serial
+  %td= rental.box.location
+  %td= rental.customer_name
+  - if action_name == 'total'
+    %td= t("_#{rental.is_active}")
+  %td= link_to t('show'), rental

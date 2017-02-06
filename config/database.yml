@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+#  password:
+  host: localhost
+
+development:
+  <<: *default
+  database: ski_rental_development
+
+test:
+  <<: *default
+  database: ski_rental_test
+
+production:
+  <<: *default
+  database: ski_rental_production

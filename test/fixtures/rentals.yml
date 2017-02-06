@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  box: one
+  user_name: John Doe
+  user_identifier: 123456XY
+  days: 1
+  payed: 10
+
+two:
+  box: two
+  user_name: Jane Doe
+  user_identifier: 123456YZ
+  days: 2
+  payed: 20

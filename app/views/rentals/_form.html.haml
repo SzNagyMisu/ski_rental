@@ -1,0 +1,34 @@
+= form_for(@rental) do |f|
+  - if @rental.errors.any?
+    #error_explanation
+      %h2
+        = t('errors_prohibited', count: @rental.errors.count, model: t('activerecord.models.rental'))
+
+      %ul
+        - @rental.errors.full_messages.each do |message|
+          %li= message
+
+  - if @rental.new_record?
+    .field
+      = label_tag :box_id, rental_t('box')
+      = select_tag :box_id, options_from_collection_for_select(Box.free, :id, :location, params[:box_id])
+  .field
+    = f.label :customer_name
+    = f.text_field :customer_name
+
+  .field
+    = f.label :customer_identifier
+    = f.text_field :customer_identifier
+
+  .field
+    = f.label :days
+    = f.number_field :days, step: 1, min: [@rental.days.to_i, 1].max, max: Rental::RENTAL_DAYS_MAX, data: {payed: @rental.days.to_i}
+
+  .field
+    = f.label :price
+    = f.number_field :price, readonly: true, data: {daily: Rental::RENTAL_DAILY_PRICE}
+    $
+
+
+  .actions
+    = f.submit 

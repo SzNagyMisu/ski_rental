@@ -1,0 +1,44 @@
+%p#notice= notice
+
+%p
+  %strong= "#{rental_t('serial')}:"
+  = @rental.serial
+
+%p
+  %strong= "#{rental_t('box')}:"
+  = @rental.box.location
+
+%p
+  %strong= "#{rental_t('customer_name')}:"
+  = @rental.customer_name
+
+%p
+  %strong= "#{rental_t('customer_identifier')}:"
+  = @rental.customer_identifier
+
+%p
+  %strong= "#{rental_t('days')}:"
+  = @rental.days 
+
+%p
+  %strong= "#{rental_t('started')}:"
+  = @rental.created_at.to_date
+
+- unless @rental.is_active
+  %p
+    %strong= "#{rental_t('ended')}:"
+    = @rental.updated_at.to_date
+
+%p
+  %strong= "#{rental_t('payed')}:"
+  = number_to_currency @rental.payed
+
+- if @rental.is_active && @fine > 0
+  %p
+    %strong= "#{rental_t('fine')}:"
+    = number_to_currency @fine
+
+- if @rental.is_active
+  = link_to t('rentals.edit'), edit_rental_path(@rental)
+  \|
+  = link_to t('rentals.end'), end_rental_path(@rental, @fine), method: :patch, data: ({confirm: t('confirm_fine_paid', amount: number_to_currency(@fine))} if @fine > 0)

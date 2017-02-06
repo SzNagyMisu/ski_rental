@@ -1,0 +1,69 @@
+hu:
+  main_page: 'Főoldal'
+  active_rentals: 'Aktív bérlések'
+  total_rentals: 'Összes bérlés'
+  ski_rental_app: 'Síkölcsönző applikáció'
+  useful_info: 'Hasznos információk'
+  available_boxes: 'Szabad szekrények száma'
+  max_rental_days: 'Bérlési napok száma maximum'
+  rental_price: 'Bérlés díja'
+  daily_price: '%{amount} / nap'
+  fine: 'Bírság díja'
+  business_info: 'Üzleti információk'
+  total_income: 'Teljes bevétel'
+  show: 'Megtekintés'
+  search: 'Keresés'
+  confirm_fine_paid: 'Kifizette a bérlő a bírságot (%{amount})?'
+  _true: 'igen'
+  _false: 'nem'
+
+  rentals:
+    title: 'Bérlések'
+    edit: 'Bérlés szerkesztése'
+    new: 'Új bérlés'
+    end: 'Bérlés lezárása'
+    created: 'A bérlést sikeresen létrehoztuk.'
+    updated: 'A bérlést sikeresen módosítottuk.'
+    ended: 'A bérlést sikeresen lezártuk.'
+
+  boxes:
+    title: 'Szekrények'
+    create_rental: 'Bérlés létrehozása ehhez a szekrényhez'
+    show_rental: 'Bérlés (%{serial}) megtekintése'
+
+  errors_prohibited:
+    one: 'Egy hiba megakadályozta ezen %{model} mentését:'
+    other: '%{count} hiba megakadályozta ezen %{model} mentését:'
+
+  helpers:
+    submit:
+      create: '%{model} létrehozása'
+      update: '%{model} módosítása'
+      submit: '%{model} mentése'
+
+  activerecord:
+    models:
+      rental: 'bérlés'
+
+    errors:
+      messages:
+        blank: 'nem lehet üres!'
+        not_a_number: 'szám kell, hogy legyen!'
+        not_an_integer: 'csak egész szám lehet!'
+        greater_than: 'nagyobb kell legyen, mint %{count}!'
+        greater_than_or_equal_to: 'nem lehet kevesebb, mint %{count}!'
+        less_than_or_equal_to: 'nem lehet több, mint %{count}!'
+        
+    attributes:
+      rental:
+        serial: 'Jegy kódja'
+        box: 'Szekrény (oszlop / sor)'
+        customer_name: 'Bérlő neve'
+        customer_identifier: 'Bérlő azonosítója'
+        days: 'Bérlés napjainak száma'
+        started: 'Kezdés'
+        ended: 'Lezárás'
+        payed: 'Teljes fizetett összeg'
+        price: 'Fizetendő összeg'
+        fine: 'Fizetendő bírság'
+        is_active: 'Aktív?'

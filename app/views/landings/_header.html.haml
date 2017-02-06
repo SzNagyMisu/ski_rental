@@ -1,0 +1,14 @@
+.main_links
+  = link_to t('main_page'), root_path
+  \|
+  = link_to t('boxes.title'), boxes_path
+  \|
+  = link_to t('active_rentals'), rentals_path
+  \|
+  = link_to t('total_rentals'), total_rentals_path
+
+.language_select
+  -available_languages.each do |lng|
+    = link_to lng, change_language_path(lng), remote: true, method: :post
+
+.clearfix

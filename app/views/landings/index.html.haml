@@ -1,0 +1,29 @@
+%h1= t('ski_rental_app')
+
+%h2= t('useful_info')
+
+%table
+  %tbody
+    %tr
+      %td= t('available_boxes')
+      %td= @boxes.free.count
+    %tr
+      %td= t('max_rental_days')
+      %td= Rental::RENTAL_DAYS_MAX
+    %tr
+      %td= t('rental_price')
+      %td= t('daily_price', amount: number_to_currency(Rental::RENTAL_DAILY_PRICE))
+    %tr
+      %td= t('fine')
+      %td= t('daily_price', amount: number_to_currency(Rental::FINE_DAILY_PRICE))
+
+%h2= t('business_info')
+
+%table
+  %tbody
+    %tr
+      %td= t('total_rentals')
+      %td= @rentals.count
+    %tr
+      %td= t('total_income')
+      %td= number_to_currency @rentals.pluck(:payed).reject(&:blank?).sum

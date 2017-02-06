@@ -1,0 +1,69 @@
+en:
+  main_page: 'Main page'
+  active_rentals: 'Active rentals'
+  total_rentals: 'Total rentals'
+  ski_rental_app: 'Ski Rental App'
+  useful_info: 'Useful information'
+  available_boxes: 'Number of available boxes'
+  max_rental_days: 'Maximum rental days'
+  rental_price: 'Rental price'
+  daily_price: '%{amount} / day'
+  fine: 'Fine'
+  business_info: 'Business information'
+  total_income: 'Total income'
+  show: 'Show'
+  search: 'Search'
+  confirm_fine_paid: 'Has the customer paid the fine (%{amount})?'
+  _true: 'yes'
+  _false: 'no'
+
+  rentals:
+    title: 'Rentals'
+    edit: 'Edit rental'
+    new: 'New rental'
+    end: 'End rental'
+    created: 'Rental was successfully created.'
+    updated: 'Rental was successfully updated.'
+    ended: 'Rental was successfully ended.'
+
+  boxes:
+    title: 'Boxes'
+    create_rental: 'Create rental for this box'
+    show_rental: 'Show rental (%{serial})'
+
+  errors_prohibited:
+    one: 'One error prohibited this %{model} from being saved:'
+    other: '%{count} errors prohibited this %{model} from being saved:'
+
+  helpers:
+    submit:
+      create: 'Create %{model}'
+      update: 'Modify %{model}'
+      submit: 'Save %{model}'
+
+  activerecord:
+    models:
+      rental: 'rental'
+
+    errors:
+      messages:
+        blank: 'cannot be omitted!'
+        not_a_number: 'must be a number!'
+        not_an_integer: 'must be an integer!'
+        greater_than: 'must be greater than %{count}!'
+        greater_than_or_equal_to: 'cannot be less than %{count}!'
+        less_than_or_equal_to: 'cannot be greater than %{count}!'
+
+    attributes:
+      rental:
+        serial: 'Ticket serial'
+        box: 'Box (column / row)'
+        customer_name: "Customer's name"
+        customer_identifier: 'Customer identifier'
+        days: 'Rental interval'
+        started: 'Started'
+        ended: 'Ended'
+        payed: 'Total amount payed'
+        price: 'Price to pay'
+        fine: 'Fine to pay'
+        is_active: 'Active?'

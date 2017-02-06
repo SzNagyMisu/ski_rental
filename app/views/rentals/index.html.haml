@@ -1,0 +1,23 @@
+%p#notice= notice
+
+%h1= t('active_rentals')
+
+%table
+  %thead
+    %tr
+      %th= rental_t('serial')
+      %th= rental_t('box')
+      %th= rental_t('customer_name')
+      %th
+
+  %tbody
+    %tr#query_rental
+      =form_tag search_rentals_path, method: :get do
+        %td= search_field_tag :serial, params[:serial]
+        %td{colspan: 2}= submit_tag t('search')
+
+    = render @rentals
+
+%br
+
+= link_to t('rentals.new'), new_rental_path

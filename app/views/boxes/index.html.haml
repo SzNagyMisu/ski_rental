@@ -1,0 +1,13 @@
+%h1= t('boxes.title')
+
+%table.boxes_table
+  %tbody
+    - @boxes.map(&:row).max.times do |row|
+      %tr
+        -@boxes.select{ |box| box.row == row + 1 }.each do |box_in_row|
+          - if box_in_row.active_rental.nil?
+            %td.available{title: t('boxes.create_rental')}
+              = link_to box_in_row.location, new_box_rental_path(box_in_row)
+          - else
+            %td.occupied{title: t('boxes.show_rental', serial: box_in_row.serial)}
+              = link_to box_in_row.location, rental_path(box_in_row.active_rental)

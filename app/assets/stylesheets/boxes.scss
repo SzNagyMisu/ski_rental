@@ -1,0 +1,17 @@
+.boxes_table {
+  td {
+    text-align: center;
+
+    &.available {
+      background-color: lightgreen;
+    }
+
+    &.occupied {
+      background-color: #f03;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}
